@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-amenity-table
+      author: Stepan
+      changes:
+        - createTable:
+            tableName: amenity
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+  - changeSet:
+      id: 004-create-hotel-amenity-link
+      author: yourname
+      changes:
+        - createTable:
+            tableName: hotel_amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_hotel_amenity_hotel
+                    references: hotel(id)
+              - column:
+                  name: amenity_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_hotel_amenity_amenity
+                    references: amenity(id)
+        - addPrimaryKey:
+            tableName: hotel_amenity
+            columnNames: hotel_id, amenity_id
+            constraintName: pk_hotel_amenity

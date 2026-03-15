@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-insert-amenities
+      author: Stepan
+      changes:
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: name
+                  value: "Free parking"
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: name
+                  value: "Free WiFi"
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: name
+                  value: "Fitness center"
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: name
+                  value: "Room service"
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: name
+                  value: "Meeting rooms"
+
+  - changeSet:
+      id: 006-link-amenities-to-hotels
+      author: Stepan
+      changes:
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (1, (SELECT id FROM amenity WHERE name = 'Free parking'));
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (1, (SELECT id FROM amenity WHERE name = 'Free WiFi'));
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (1, (SELECT id FROM amenity WHERE name = 'Fitness center'));
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (2, (SELECT id FROM amenity WHERE name = 'Free parking'));
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (2, (SELECT id FROM amenity WHERE name = 'Free WiFi'));
+        - sql:
+            sql: INSERT INTO hotel_amenity (hotel_id, amenity_id) VALUES (2, (SELECT id FROM amenity WHERE name = 'Fitness center'));

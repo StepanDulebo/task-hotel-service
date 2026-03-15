@@ -1,0 +1,84 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-sample-hotels
+      author: Stepan
+      changes:
+        - insert:
+            tableName: hotel
+            columns:
+              - column:
+                  name: name
+                  value: "DoubleTree by Hilton Minsk"
+              - column:
+                  name: description
+                  value: "The DoubleTree by Hilton Hotel Minsk offers 193 luxurious rooms in the Belorussian capital and stunning views of Minsk city from the hotel's 20th floor ..."
+              - column:
+                  name: brand
+                  value: "Hilton"
+              - column:
+                  name: address_house_number
+                  value: "9"
+              - column:
+                  name: address_street
+                  value: "Pobediteley Avenue"
+              - column:
+                  name: address_city
+                  value: "Minsk"
+              - column:
+                  name: address_country
+                  value: "Belarus"
+              - column:
+                  name: address_post_code
+                  value: "220004"
+              - column:
+                  name: contacts_phone
+                  value: "+375 17 309-80-00"
+              - column:
+                  name: contacts_email
+                  value: "doubletreeminsk.info@hilton.com"
+              - column:
+                  name: arrival_time_check_in
+                  value: "14:00"
+              - column:
+                  name: arrival_time_check_out
+                  value: "12:00"
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column:
+                  name: name
+                  value: "Hilton Moscow Leningradskaya"
+              - column:
+                  name: description
+                  value: "Historic hotel in the center of Moscow..."
+              - column:
+                  name: brand
+                  value: "Hilton"
+              - column:
+                  name: address_house_number
+                  value: "21/40"
+              - column:
+                  name: address_street
+                  value: "Kalanchevskaya Street"
+              - column:
+                  name: address_city
+                  value: "Moscow"
+              - column:
+                  name: address_country
+                  value: "Russia"
+              - column:
+                  name: address_post_code
+                  value: "107078"
+              - column:
+                  name: contacts_phone
+                  value: "+7 495 627-55-50"
+              - column:
+                  name: contacts_email
+                  value: "moscow@hilton.com"
+              - column:
+                  name: arrival_time_check_in
+                  value: "15:00"
+              - column:
+                  name: arrival_time_check_out
+                  value: "12:00"

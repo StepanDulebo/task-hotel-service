@@ -1,1 +1,20 @@
 databaseChangeLog:
+  - include:
+      file: 001-create-hotel-table.yaml
+      relativeToChangelogFile: true
+
+
+
+
+  - include:
+      file: 002-insert-sample-hotels.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: 003-create-amenity-and-link.yaml
+      relativeToChangelogFile: true
+
+
+  - include:
+      file: 005-insert-amenities-and-links.yaml
+      relativeToChangelogFile: true
